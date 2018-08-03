@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Fri Jan 08 18:15:26 CET 2010
+builderNum=2
+outputDir=
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=KomFour.tex
+outputFile=KomFour.pdf
+langSpell=en
+markDer=true
+srcDir=
