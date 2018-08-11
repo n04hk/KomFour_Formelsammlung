@@ -51,7 +51,7 @@
 	$z_1 = |z| \cos{\varphi}, \quad z_2 = |z| \sin{\varphi}$
 \end{minipage}
 
-$\textbf{Imaginäre Einheit:} \qquad j^2 = -1 \qquad e^{j\pi} = -1 \qquad \frac{1}{j} = -j \qquad e^{j\frac{\pi}{2}}= j \qquad j^j = e^{-\frac{\pi}{2}+2k\pi}$
+$\textbf{Imaginäre Einheit:} \qquad j^2 = -1 \qquad e^{j\pi} = e^{-j\pi} = -1 \qquad e^{j2\pi} = 1 \qquad \frac{1}{j} = -j \qquad e^{j\frac{\pi}{2}}= j \qquad j^j = e^{-\frac{\pi}{2}+2k\pi}$
 
 
 \skriptsubsection{Rechenregeln}{10ff}
@@ -203,8 +203,8 @@ Eine komplexe Funktion hat einen 2-Dimensionalen Input ($z_1$, $z_2$) und einen
 2-Dimensionalen Output ($w_1$, $w_2$). \\
 Diese Abbildungen sind bis jeweils auf wenige Punkte (bei der Sinus-Funktion
 $\pm$1, etc) winkeltreu.\\
-$ f: \mathbb{D} \subseteq \mathbb{C} \mapsto \mathbb{C} \qquad z  \mapsto w = f(z)$\\
-$w_1 = \text{Re}(f(r+jc)); w_2 = \text{Im}(f(r+jc)) \qquad f'(z) = 0$ nicht winkeltreu! $\qquad f'(z) \neq 0$ winkeltreu! 
+$ f: \mathbb{D} \subseteq \mathbb{C} \mapsto \mathbb{C} \qquad z  \mapsto w = f(z) \qquad w_1 = \text{Re}(f(r+jc)); w_2 = \text{Im}(f(r+jc))$\\$
+f'(z) = 0$ nicht winkeltreu! $\qquad f'(z) \neq 0$ winkeltreu! $\rightarrow$ Drehwinkel: $arg[f'(z)]$ und Streckfaktor: $|f'(z)|$
  
 
 \skriptsubsection{Lineare Funktion}{41ff}
@@ -263,13 +263,14 @@ $w_1 = \text{Re}(f(r+jc)); w_2 = \text{Im}(f(r+jc)) \qquad f'(z) = 0$ nicht wink
 	\qquad \qquad 
 	\underbrace{\overline{f}: z \mapsto w = \frac{1}{\overline{z}};}_\text{Kreisspiegelung}  \quad  
 	(\arg(w) = \arg(z), |w| = \frac{1}{|z|}) $$\\
-	Kreisspiegelung: Alle Punkte auf der z-Ebene werden am Einheitskreis gespiegelt.
-	Geraden auf Kreise abgebildet und umgekehrt. Der Ursprungspunkt (0;0) wird auf
-	$ \infty $ abgebildet (auf allen Winkeln zwischen $0^o-360^o$). Die
-	Abbildungen sind
-	im verallgemeinerten Sinn (Geraden sind Kreise mit unendlichem Radius)
-	kreistreu. Ausserdem sind sie, bis auf den Koordinatenursprung, winkeltreu.\\
+
 	\begin{minipage}{9cm}
+		Kreisspiegelung: Alle Punkte auf der z-Ebene werden am Einheitskreis gespiegelt.
+		Geraden auf Kreise abgebildet und umgekehrt. Der Ursprungspunkt (0;0) wird auf
+		$ \infty $ abgebildet (auf allen Winkeln zwischen $0^o-360^o$). Die
+		Abbildungen sind
+		im verallgemeinerten Sinn (Geraden sind Kreise mit unendlichem Radius)
+		kreistreu. Ausserdem sind sie, bis auf den Koordinatenursprung, winkeltreu.\\
 		\begin{tabbing}
         	xxxxxxxxxxxxxxxxxxxxxxx\=xxxxxxxxxxxxxxxxxxxxxxxx\kill
 	        - Gerade durch 0 $\Longrightarrow$ \>Fixgerade (gleiche Gerade, aber
@@ -435,58 +436,61 @@ $$ \text{Parameterform: } f(t) = m + r \cdot e^{jt}, \quad \text{mit } (0 \leq t
     	\end{array}
     	$
 
-\skriptsubsection{Satz von Dirichlet}{89}
+\begin{multicols}{2}
+	\skriptsubsection{Satz von Dirichlet}{89}
 	Die Funktion $f(t)$ sei $T$-periodisch und stückweise stetig mit Limes, dann konvergiert ihre Fourierreihe gegen\\
 	$$FR[f(t_0)] = f(t_0) = \frac{f(t_{0-}) + f(t_{0+})}{2}$$
-	somit in die Mitte einer Sprungstelle oder dem Funktionswert selber.
+	somit in die Mitte einer Sprungstelle oder den Funktionswert selber.
+\vfill\null
+\columnbreak
+	\skriptsubsection{Abstand f - g}{84}
+	Abstand zweier $T$-periodischen, mit Limes stückweise stetigen Funktionen $f$ und $g$.
+	$$||f - g|| = \sqrt{\frac{2}{T}\int\limits_0^2[f(t) - g(t)]^2 \mathrm dt} $$
+\vfill\null
+\end{multicols}
 
-
-\skriptsubsection{Abstand f - g}{84}
-Abstand zweier $T$-periodischen, mit Limes stückweise stetigen Funktionen $f$ und $g$.
-$$||f - g|| = \sqrt{\frac{2}{T}\int\limits_0^2[f(t) - g(t)]^2 \mathrm dt} $$
-
-\skriptsubsection{Praval'sche Gleichung}{97}
-$$\sum\limits_{k = -\infty}^{\infty}|c_k|^2 = \frac{1}{T}\int\limits_{0}{T}[f(t)]^2\mathrm dt$$
-		
+\begin{multicols}{2}
+\skriptsubsection{Parsevalsche Gleichung}{97}
+$$\frac{a_0^2}{2} + \sum_{n=1}^{\infty}(a_n^2+b_n^2) = \frac{2}{T}\int_{0}^{T}[f(t)]^2dt = ||f||^2$$
+$$\sum\limits_{k = -\infty}^{\infty}|c_k|^2 = \frac{1}{T}\int\limits_{0}^{T}[f(t)]^2\mathrm dt$$
+\vfill\null
+\columnbreak		
 \skriptsubsection{Integral und Differential}{88}
 Falls die T-periodische Funktion $f$ (auf ganz $\mathbb{R}$) zweimal stetig differenzierbar ist und die Fourierkoeffizienten $a_n$ und $b_n$ besitzt, so gilt:
-$$ f'(t) = \sum\limits_{n=1}^{\infty} [b_n n \omega \cdot \cos{(n \omega t)} - a_n n \omega \cdot \sin{(n \omega t)}]
-\qquad \qquad \int\limits_0^t f(\tau) d\tau = \sum\limits_{n=1}^{\infty} [\frac{b_n}{n \omega}] + 
+$$ f'(t) = \sum\limits_{n=1}^{\infty} [b_n n \omega \cdot \cos{(n \omega t)} - a_n n \omega \cdot \sin{(n \omega t)}]$$
+$$\int\limits_0^t f(\tau) d\tau = \sum\limits_{n=1}^{\infty} [\frac{b_n}{n \omega}] + 
 \frac{a_0}{2} t + \sum\limits_{n=1}^{\infty}
 [\frac{a_n}{n \omega} \cdot \sin{(n \omega t)} - \frac{b_n}{n \omega} \cdot \cos{(n \omega t)}] $$
+\end{multicols}
 
 \skriptsubsection{Gibbs'sches Phänomen}{92f}
-
 \begin{figure}[htbp]
+	\vspace{-\baselineskip}
 	\begin{minipage}[c]{8cm}
-		Die Fourier-Reihen schwingen bei Unstetigkeitsstellen über. Die Höhe der grössten überschwingenden Welle
+		Die Fourierreihen schwingen bei Unstetigkeitsstellen über. Die Höhe der grössten überschwingenden Welle
 		beträgt 8.94\% der gesamten Sprunghöhe.
 	\end{minipage}
 	\begin{minipage}[c]{8cm}
 		\includegraphics[width=8cm]{./bilder/gibssches_phaenomen.png}  
 	\end{minipage}
 \end{figure}
+\vspace{-\baselineskip}
 
 \skriptsection{Spektren}{103}
-\skriptsubsection{Spektraldarstellungen}{103ff} 
-
-\begin{figure}[htbp]
-	\centering
-	\begin{minipage}[b]{5.7cm}
-		\includegraphics[width=5.7cm]{./bilder/spektren_cossin.png}
-		\caption{Kosinus- und Sinusamplitudendiagramm} 
-	\end{minipage}
-	\hspace{0.5cm}
-	\begin{minipage}[b]{5.7cm}
-		\includegraphics[width=5.7cm]{./bilder/spektren_einseitig.png} 
-		\caption{Einseitiges Amplituden-/Phasendiagramm} 
-	\end{minipage}
-	\hspace{0.5cm}
-	\begin{minipage}[b]{5.7cm}
-		\includegraphics[width=5.7cm]{./bilder/spektren_zweiseitig.png} 
-		\caption{Zweiseitiges Amplituden-/Phasendiagramm} 
-	\end{minipage}
-\end{figure}
+\begin{minipage}{0.3\linewidth}
+	\includegraphics[width=\linewidth]{./bilder/spektren_cossin.png}
+	\small{Kosinus- und Sinusamplitudendiagramm}
+\end{minipage}%
+\hspace{0.01\linewidth}
+\begin{minipage}{0.31\linewidth}
+	\includegraphics[width=\linewidth]{./bilder/spektren_einseitig.png}
+	\small{1-seitiges Amplituden-/Phasendiagramm}
+\end{minipage}%
+\hspace{0.01\linewidth}
+\begin{minipage}{0.31\linewidth}
+	\includegraphics[width=\linewidth]{./bilder/spektren_zweiseitig.png}
+	\small{2-seitiges Amplituden-/Phasendiagramm}
+\end{minipage}
 
 \subsubsection{(1) Kosinus- und Sinusamplitudendiagramm} 
 Reelle Fourierkoeffizienten ($a_n, b_n$) können direkt abgelesen werden. 
@@ -495,29 +499,33 @@ Diese Darstellung hat gegenüber den anderen mehr Nachteile und wird daher eher 
 
 $$a_n = A_n \cdot \cos(\varphi_n) \qquad b_n = -A_n \cdot \sin(\varphi_n) = A_n \sin(-\varphi_n)$$
 
-
-\subsubsection{(2) Einseitiges Amplituden-/Phasendiagramm} 
-$A_n = |a_n - j \cdot b_n| = \sqrt{a_n^2 + b_n^2}$ \text{ oder } $A_n = 2 \cdot |c_n| \qquad$
-$\varphi_n = \arg(a_n - j \cdot b_n) \text{ oder } \varphi_n = \arg(c_n) $ \\
-Spezialfall $n=0 \Rightarrow A_0 = |\frac{a_0}{2}| \text{ und } \varphi_0 = \left\{
-		\begin{array}{l} 
-			0, \quad a_0 \geq 0\\
-			\pi, \quad a_0 < 0  
-		\end{array}
-	    \right. $\\
-
-\subsubsection{(3) Zweiseitiges Amplituden-/Phasendiagramm (komplexes Spektrum)} 
-Amplitudendiagramm ist achsensymmetrisch wegen $ c_n=\overline{c_{-n}} $. Phasendiagramm ist punktsymmetrisch. \\
-Ähnlichkeit mit Einseitigem: $|c_n| = \frac{1}{2}A_k $ und $\arg(c_n) = \varphi_k$ für alle $ n \geq 0$.\\
-$$arg(c_{-n}) = -arg(c_n) \qquad c_n = \frac{a_n - jb_n}{2} \qquad \varphi_n = arg(a_n - jb_n) \qquad c_n = \frac{A_n}{2} \cdot e^{j\varphi_n}$$
+\begin{multicols}{2}
+	\subsubsection{(2) Einseitiges Amplituden-/Phasendiagramm} 
+	$A_n = |a_n - j \cdot b_n| = \sqrt{a_n^2 + b_n^2}$ oder $A_n = 2 \cdot |c_n|$\\
+	$\varphi_n = \arg(a_n - j \cdot b_n) = \arctan(-\frac{b_n}{a_n}) \text{ oder } \varphi_n = \arg(c_n) $ \\
+	Spezialfall $n=0 \Rightarrow A_0 = |\frac{a_0}{2}| \text{ und } \varphi_0 = \left\{
+	\begin{array}{l} 
+	0, \quad a_0 \geq 0\\
+	\pi, \quad a_0 < 0  
+	\end{array}
+	\right. $\\
+	\vfill\null
+	\columnbreak
+	\subsubsection{(3) Zweiseitiges Amplituden-/Phasendiagramm}
+	\textbf{(komplexes Spektrum)}\\ 
+	Amplitudendiagramm ist achsensymmetrisch weil $ c_n=\overline{c_{-n}} $. Phasendiagramm ist punktsymmetrisch. \\
+	Ähnlichkeit mit Einseitigem: $|c_n| = \frac{1}{2}A_n $ und $\varphi_n$ gleich wie bei (2) für alle $ n \geq 0$.\\
+	$A_0 = |\frac{a_0}{2}| = |c_0| $
+	$$arg(c_{-n}) = -arg(c_n) \qquad c_n = \frac{a_n - jb_n}{2} \qquad \varphi_n = arg(a_n - jb_n) \qquad c_n = \frac{A_n}{2} \cdot e^{j\varphi_n}$$
+\end{multicols}
 
 \skriptsubsection{Spezialfälle}{106}
 \begin{tabular}{ll}
 	Funktion f gerade 
-	& (1) Sinusamplitudendiagramm überall 0 \\
+	& (1) Sinusphasendiagramm überall 0 \\
 	& (2,3) Phasendiagramm enthält nur die Werte $0$ und $\pi$ \\
 	Funktion f ungerade
-	& (1) Kosinusamplitudendiagramm überall 0 \\
+	& (1) Kosinusphasendiagramm überall 0 \\
 	& (2,3) Phasendiagramm enthält nur die Werte $\pm \frac{\pi}{2}$ (oder $0$ falls Amplitudenwert $=0$) \\
 	"Ahnlichkeit $g(t) = f(r \cdot t) $
 	& (1,2,3) Das Spektrum von $g$ ist das horizontal mit den Faktor $r$ gestreckte Spektrum vom $f$. \\
@@ -528,13 +536,11 @@ $$arg(c_{-n}) = -arg(c_n) \qquad c_n = \frac{a_n - jb_n}{2} \qquad \varphi_n = a
 	Weisses Rauschen
 	& "Uberlagerung von Schwingungen aller möglichen Frequenzen \\
 	& mit gleichen Amplituden und zufälligen Phasen. 
-
 \end{tabular}
+\vspace{-\baselineskip}
 
 \label{LastPage}
-\section{Wichtige Formeln}
-	$\sin^2(b)+\cos^2(b)=1 \qquad \tan(b)=\frac{\sin(b)}{\cos(b)}$	
-	
+\section{Wichtige Formeln}	
 \subsection{Funktionswerte für Winkelargumente}
 	\renewcommand{\arraystretch}{1.5}
 	\begin{minipage}{5cm}
@@ -603,22 +609,8 @@ $$arg(c_{-n}) = -arg(c_n) \qquad c_n = \frac{a_n - jb_n}{2} \qquad \varphi_n = a
 	\renewcommand{\arraystretch}{1}
 	
 	$\tan^{-1}$: wenn x$>$1 dann gilt: $\tan^{-1}(x)=\frac{\Pi}{2}-\tan^{-1}(\frac{1}{x})$
-\subsection{Periodizität}
-	$\cos(a+k\cdot2\pi)=\cos(a) \qquad \sin(a+k\cdot2\pi)=\sin(a) \qquad
-	(k \in \mathbb{Z})$
-	
-\subsection{Quadrantenbeziehungen}
-	\begin{tabbing}
-    	xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \= \kill
-	  	$\sin(-a)=-\sin(a)$ \> $\cos(-a)=\cos(a)$\\
-		$\sin(\pi - a)=\sin(a)$ \> $\cos(\pi - a)=-\cos(a)$\\
-		$\sin(\pi + a)=-\sin(a)$ \> $\cos(\pi +a)=-\cos(a)$\\
-		$\sin\left(\frac{\pi}{2}-a \right)=\sin\left(\frac{\pi}{2}+a \right)=\cos(a)$ \>
-		$\cos\left(\frac{\pi}{2}-a \right)=-\cos\left(\frac{\pi}{2}+a \right)=\sin(a)$  
-    \end{tabbing}
 
-
-\begin{minipage}[t]{10cm}
+\begin{minipage}[t]{9cm}
 	\subsection{Additionstheoreme}
 		$\sin(a \pm b)=\sin(a) \cdot \cos(b) \pm \cos(a) \cdot \sin(b)$\\
 		$\cos(a \pm b)=\cos(a) \cdot \cos(b) \mp \sin(a) \cdot \sin(b)$\\	
@@ -633,11 +625,19 @@ $$arg(c_{-n}) = -arg(c_n) \qquad c_n = \frac{a_n - jb_n}{2} \qquad \varphi_n = a
 	\subsection{Produkte}
 			$\sin(a)\sin(b)=\frac{1}{2}(\cos(a-b)-cos(a+b))$\\
 			$\cos(a)\cos(b)=\frac{1}{2}(\cos(a-b)+cos(a+b))$\\
-			$\sin(a)\cos(b)=\frac{1}{2}(\sin(a-b)+\sin(a+b))$
-		
-				
+			$\sin(a)\cos(b)=\frac{1}{2}(\sin(a-b)+\sin(a+b))$	
 \end{minipage}
-\begin{minipage}[t]{6cm}			
+\begin{minipage}[t]{6cm}
+	\subsection{Quadrantenbeziehungen}
+	\begin{tabbing}
+		xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \= \kill
+		$\sin(-a)=-\sin(a)$ \> $\cos(-a)=\cos(a)$\\
+		$\sin(\pi - a)=\sin(a)$ \> $\cos(\pi - a)=-\cos(a)$\\
+		$\sin(\pi + a)=-\sin(a)$ \> $\cos(\pi +a)=-\cos(a)$\\
+		$\sin\left(\frac{\pi}{2}-a \right)=\sin\left(\frac{\pi}{2}+a \right)=\cos(a)$\\
+		$\cos\left(\frac{\pi}{2}-a \right)=-\cos\left(\frac{\pi}{2}+a \right)=\sin(a)$  
+	\end{tabbing}
+			
 	\subsection{Summe und Differenz}
 		$\sin(a)+\sin(b)=2 \cdot \sin \left(\frac{a+b}{2}\right) \cdot
 		\cos\left(\frac{a-b}{2}\right)$\\
@@ -650,51 +650,51 @@ $$arg(c_{-n}) = -arg(c_n) \qquad c_n = \frac{a_n - jb_n}{2} \qquad \varphi_n = a
 		$\tan(a) \pm \tan(b)=\frac{\sin(a \pm b)}{\cos(a)\cos(b)}$
 \end{minipage}
 
-\subsection{Skalarprodukt}
-	\begin{tabular}{|p{3cm}|p{7cm}|p{7cm}|}
-	    \hline
-	    & Reelle Fourierreihe & Komplexe Fourierreihe \\
-	    \hline
-	    Skalarprodukt &  $\langle f;g \rangle = \frac{2}{T}\int\limits_0^Tf(t)\cdot
-	    g(t)\cdot dt $ & $\langle f;g \rangle = \frac{1}{T}\int\limits_0^Tf(t)\cdot
-	    \overline{g(t)}\cdot dt $ \\
-	    & $(I)\ \langle f;f \rangle > 0\ f"ur\ f\neq 0$ &
-	    $(I)\ \langle f;f \rangle > 0\ f"ur\ f\neq 0$ \\
-	    & $(II)\ \langle f;g \rangle = \langle g;f \rangle $ &
-	    $(II)\ \langle f;g \rangle = \overline{\langle g;f \rangle} $ \\
-	    & $(III) \langle r\cdot f;g\rangle = r\cdot\langle f;g\rangle,\ r\epsilon
-	    \mathbb R$ & $(III) \langle c\cdot f;g\rangle = c\cdot\langle f;g\rangle,\ 
-	    c\epsilon \mathbb R$
-	    \\
-	    \hline
-	    Länge (Norm): & \multicolumn{2}{|l|}{
-	    $\parallel f \parallel = \sqrt{\langle
-	    f;f \rangle} \Rightarrow y=3x^2+4 \rightarrow \sqrt{3\cdot3+4\cdot4}=5$ 
-	    } \\
-	    & \multicolumn{2}{|l|}{ $ (I)\ \parallel f \parallel > 0 f"ur f \neq 0$} \\
-	    & \multicolumn{2}{|l|}{ $ (II)\ \parallel f+g \parallel \leq \parallel f
-	    \parallel + \parallel g \parallel (Dreiecksgleichung)$} \\
-	    & \multicolumn{2}{|l|}{ $ (III)\ \parallel r\cdot f \parallel = |r| \cdot
-	    \parallel f \parallel , \ r \epsilon \mathbb R bzw. \parallel c\cdot
-	    f\parallel = |c|\cdot \parallel f \parallel, c\epsilon\mathbb C$} \\
-	    \hline
-	    Abstand: & \multicolumn{2}{|l|}{ $ \parallel f-g \parallel =
-	    |\sqrt{\langle f-g;f-g \rangle}| \Rightarrow
-	    |p-q|=(3x^2+4)-(x^2+7)=2x^2+11 \rightarrow
-	    \sqrt{2\cdot2+11\cdot11}=5\cdot\sqrt{5}$}
-	    \\
-	    \hline
-	    Winkel, Orthogonalit"at &
-	    \multicolumn{2}{|l|}{
-	    $\sphericalangle(f;g)=\arccos\left( \frac{\langle f;g \rangle}{\parallel f
-	    \parallel \cdot \parallel g \parallel} \right) = \arccos\left(\frac{\langle f;g 
-	    \rangle}{\sqrt{\langle f;f\rangle \cdot \langle g;g\rangle}}\right)$} \\
-	     & \multicolumn{2}{|l|}{$f \perp g\Leftrightarrow \langle f;g \rangle = 0$}
-	     \\
-	    
-	    
-	    \hline
-	\end{tabular}
+%\subsection{Skalarprodukt}
+%	\begin{tabular}{|p{3cm}|p{7cm}|p{7cm}|}
+%	    \hline
+%	    & Reelle Fourierreihe & Komplexe Fourierreihe \\
+%	    \hline
+%	    Skalarprodukt &  $\langle f;g \rangle = \frac{2}{T}\int\limits_0^Tf(t)\cdot
+%	    g(t)\cdot dt $ & $\langle f;g \rangle = \frac{1}{T}\int\limits_0^Tf(t)\cdot
+%	    \overline{g(t)}\cdot dt $ \\
+%	    & $(I)\ \langle f;f \rangle > 0\ f"ur\ f\neq 0$ &
+%	    $(I)\ \langle f;f \rangle > 0\ f"ur\ f\neq 0$ \\
+%	    & $(II)\ \langle f;g \rangle = \langle g;f \rangle $ &
+%	    $(II)\ \langle f;g \rangle = \overline{\langle g;f \rangle} $ \\
+%	    & $(III) \langle r\cdot f;g\rangle = r\cdot\langle f;g\rangle,\ r\epsilon
+%	    \mathbb R$ & $(III) \langle c\cdot f;g\rangle = c\cdot\langle f;g\rangle,\ 
+%	    c\epsilon \mathbb R$
+%	    \\
+%	    \hline
+%	    Länge (Norm): & \multicolumn{2}{|l|}{
+%	    $\parallel f \parallel = \sqrt{\langle
+%	    f;f \rangle} \Rightarrow y=3x^2+4 \rightarrow \sqrt{3\cdot3+4\cdot4}=5$ 
+%	    } \\
+%	    & \multicolumn{2}{|l|}{ $ (I)\ \parallel f \parallel > 0 f"ur f \neq 0$} \\
+%	    & \multicolumn{2}{|l|}{ $ (II)\ \parallel f+g \parallel \leq \parallel f
+%	    \parallel + \parallel g \parallel (Dreiecksgleichung)$} \\
+%	    & \multicolumn{2}{|l|}{ $ (III)\ \parallel r\cdot f \parallel = |r| \cdot
+%	    \parallel f \parallel , \ r \epsilon \mathbb R bzw. \parallel c\cdot
+%	    f\parallel = |c|\cdot \parallel f \parallel, c\epsilon\mathbb C$} \\
+%	    \hline
+%	    Abstand: & \multicolumn{2}{|l|}{ $ \parallel f-g \parallel =
+%	    |\sqrt{\langle f-g;f-g \rangle}| \Rightarrow
+%	    |p-q|=(3x^2+4)-(x^2+7)=2x^2+11 \rightarrow
+%	    \sqrt{2\cdot2+11\cdot11}=5\cdot\sqrt{5}$}
+%	    \\
+%	    \hline
+%	    Winkel, Orthogonalit"at &
+%	    \multicolumn{2}{|l|}{
+%	    $\sphericalangle(f;g)=\arccos\left( \frac{\langle f;g \rangle}{\parallel f
+%	    \parallel \cdot \parallel g \parallel} \right) = \arccos\left(\frac{\langle f;g 
+%	    \rangle}{\sqrt{\langle f;f\rangle \cdot \langle g;g\rangle}}\right)$} \\
+%	     & \multicolumn{2}{|l|}{$f \perp g\Leftrightarrow \langle f;g \rangle = 0$}
+%	     \\
+%	    
+%	    
+%	    \hline
+%	\end{tabular}
 
 \section{Diverses}
 \begin{tabbing}
@@ -707,13 +707,15 @@ $$arg(c_{-n}) = -arg(c_n) \qquad c_n = \frac{a_n - jb_n}{2} \qquad \varphi_n = a
 	b^4$\\ 
 \end{tabbing}
 
-\subsection{Integrale}
-	Partielle Integration: $\int^{b}_{a} u(x) v'(x) dx = [u(x)v(x)]^{b}_{a} - \int^{b}_{a} u'(x) v(x) dx$
-	\begin{center}
-	\includegraphics[width=\linewidth]{./bilder/integral1.png}
-	\end{center}
-	\begin{center}
-	\includegraphics[width=\linewidth]{./bilder/integral2.png}
-	\end{center}
+\includegraphics[width=0.4\linewidth]{./bilder/winkelfunktionen.png}
+
+%\subsection{Integrale}
+%	Partielle Integration: $\int^{b}_{a} u(x) v'(x) dx = [u(x)v(x)]^{b}_{a} - \int^{b}_{a} u'(x) v(x) dx$
+%	\begin{center}
+%	\includegraphics[width=\linewidth]{./bilder/integral1.png}
+%	\end{center}
+%	\begin{center}
+%	\includegraphics[width=\linewidth]{./bilder/integral2.png}
+%	\end{center}
 
 \end{document}
