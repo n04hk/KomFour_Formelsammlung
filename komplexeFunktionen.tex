@@ -1,0 +1,131 @@
+\skriptsection{Komplexe Funktionen (Abbildungen)}{37ff}
+Eine komplexe Funktion hat einen 2-Dimensionalen Input ($z_1$, $z_2$) und einen
+2-Dimensionalen Output ($w_1$, $w_2$). \\
+Diese Abbildungen sind bis jeweils auf wenige Punkte (bei der Sinus-Funktion
+$\pm$1, etc) winkeltreu.\\
+$ f: \mathbb{D} \subseteq \mathbb{C} \mapsto \mathbb{C} \qquad z  \mapsto w = f(z) \qquad w_1 = \text{Re}(f(r+jc)); w_2 = \text{Im}(f(r+jc))$\\$
+f'(z) = 0$ nicht winkeltreu! $\qquad f'(z) \neq 0$ winkeltreu! $\rightarrow$ Drehwinkel: $arg[f'(z)]$ und Streckfaktor: $|f'(z)|$
+ 
+
+\skriptsubsection{Lineare Funktion}{41ff}
+ 	\begin{minipage}{9cm}
+       $$ f : z \mapsto w = az + b \qquad (a, b \in \mathbb{C} \text{ und } a \neq0)\\$$
+		- für $a = 1$ eine Translation um den Ortsvektor b \\
+		- für $a \neq 1$ eine Drehstreckung mit dem Zentrum $\frac{b}{1-a}$, dem 
+		Drehwinkel $\arg(a)$ und dem Streckfaktor $|a|$.  
+    \end{minipage}
+	\hspace{2cm}
+	\begin{minipage}{8cm}
+    	\includegraphics[width=8cm]{./bilder/LineareFunktion.png}
+    \end{minipage}
+
+\skriptsubsection{Quadratfunktion und Quadratwurzelfunktion}{45ff}
+	\begin{minipage}{9cm}
+    	$$ f : z \mapsto w = z^2 \qquad \qquad f : z \mapsto w = \sqrt{z} $$\\
+		Bei der Quadratfunktion wird schon die rechte Hälfte der z-Ebene auf die ganze
+		w-Ebene abgebildet (die Argumente werden verdoppelt). Mit der linken Hälfte zusammen ergeben sich
+		zwei bzw. mehr Ebenen (Riemannsche Ebene).\\
+		Sie ist überall Winkeltreu, ausser im Koordinatenursprung!
+    \end{minipage}
+	\hspace{2cm}
+	\begin{minipage}{8cm}
+    	\includegraphics[width=8cm]{./bilder/quadrat.png} 
+    \end{minipage}
+    
+\skriptsubsection{Sinus-Funktion}{67f}
+	 \begin{minipage}{10cm}
+		$$ f : z \mapsto w = \sin(z) $$    
+		Die Sinusfunktion ist ausser bei den Punkten $z = \frac{\pi}{2}+ k\pi (k \in
+		\mathbb{Z}))$ winkeltreu
+	\end{minipage}
+	\hspace{2cm}
+	\begin{minipage}{7cm}
+		\includegraphics[width=7cm]{./bilder/sinus.png} 
+	
+	\end{minipage}
+
+\skriptsubsection{Exponentialfunktion}{64ff} 
+	\begin{minipage}{11cm}
+		$$ f : z \mapsto w = e^z =e^{\text{Re}(z)}*\cjs(\text{Im}(z))$$
+		Waagrechte Gitternetzlinen gehen gemäss der obigen Gleichung in Strahlen
+		über, die im Koordinatenursprung beginnen, senkrechte Gitternetzlinien in
+		Kreise um den Koordinatenursprung. Die e$^z$-Funktion ist periodisch, deshalb
+		braucht es eine Riemannsche Fläche.\\ \\
+		Mit dieser Funktion kann man das Feld an den Rändern des Plattenkondensators
+		berechnen. 
+	\end{minipage}
+	\hspace{1cm}
+	\begin{minipage}{7cm}
+		\includegraphics[width=7cm]{./bilder/exponentional.png} 		
+	\end{minipage}
+\skriptsubsection{Kehrwertfunktion und Kreisspiegelung}{51ff}
+	$$\underbrace{f : z \mapsto w = \frac{1}{z};}_\text{Spiegelung an x-Achse (Kehrwert)} \quad (\arg(w) = -\arg(z), |w| = \frac{1}{|z|})
+	\qquad \qquad 
+	\underbrace{\overline{f}: z \mapsto w = \frac{1}{\overline{z}};}_\text{Kreisspiegelung}  \quad  
+	(\arg(w) = \arg(z), |w| = \frac{1}{|z|}) $$
+	\begin{tabbing}
+		xxxx\=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\=xxxxxxx\kill
+		\> überall ausser im Ursprung winkeltreu \> überall winkeltreu
+	\end{tabbing}
+
+
+	\begin{minipage}{9cm}
+		Kreisspiegelung: Alle Punkte auf der z-Ebene werden am Einheitskreis gespiegelt.
+		Geraden auf Kreise abgebildet und umgekehrt. Der Ursprungspunkt (0;0) wird auf
+		$ \infty $ abgebildet (auf allen Winkeln zwischen $0^o-360^o$). Die
+		Abbildungen sind im verallgemeinerten Sinn (Geraden sind Kreise mit unendlichem Radius)
+		kreistreu. Ausserdem sind sie, auch im Koordinatenursprung, winkeltreu.\\
+		\begin{tabbing}
+        	xxxxxxxxxxxxxxxxxxxxxxx\=xxxxxxxxxxxxxxxxxxxxxxxx\kill
+	        - Gerade durch 0 $\Longrightarrow$ \>Fixgerade (gleiche Gerade, aber
+	        die \\ \>Punkte darauf sind anders verteilt)\\ \\
+			- Gerade nicht durch 0 $\Longrightarrow$ Kreis durch 0\\ \\ 
+			- Kreis nicht durch 0 $\Longrightarrow$ \>Spiegelung des Kreises\\ \> am Einheitskreis\\ \\
+			- Kreis durch 0 $\Longrightarrow$\>Gerade nicht durch 0
+        \end{tabbing}
+	\end{minipage}
+	\hspace{2cm}
+	\begin{minipage}{6cm}
+		%\includegraphics[width=6cm]{./bilder/GeradeKreisspiegelung.png} 
+    		%\includegraphics[width=6cm]{./bilder/KreisKreisspiegelung.png}
+		\includegraphics[width=6cm]{./bilder/Kurvenspiegelung.png}
+    \end{minipage}
+
+
+%\skriptsubsection{Möbiustransformation}{57ff}
+%	\begin{minipage}{10cm}
+%		$$ f : z \mapsto w = f(z) = \frac{az + b}{cz + d}$$
+%		$$(a, b, c, d \in 
+%		\mathbb{C} \text{ mit } c \neq 0 \text{ und } ad - bc \neq 0) $$
+%		Die Möbiustransformation ist eine Verkettung einer linearen Funktion, der Kehrwertfunktion und einer weiteren linearen Funktion. \\
+%		Diese Transformationen sind winkel- und kreistreu. Die Umkehrfunktion ergibt wieder eine Möbiustransformation. \\
+%		Eigentlich besitzt diese Funktion nur drei Parameter da man den Bruch
+%		$\frac{az + b}{cz + d}$ stets so kürzen kann dass einer der vier Parameter 1
+%		ist. Durch die 3 Freiheitsgrade kann man unterschiedlichste kriterien
+%		vorgeben und damit komplizierte Umformungen machen, wie im Bild gezeigt wird:
+%	
+%	\end{minipage}
+%	\hspace{2cm}
+%	\begin{minipage}{7cm}
+%		\includegraphics[width=7cm]{./bilder/Moebiustransformation.png} 
+%	\end{minipage}
+%
+%\skriptsubsection{Joukowski-Funktion}{60ff}
+%	\begin{minipage}{10cm}
+%		$$ f : z \mapsto w = z + \frac{1}{z}  $$
+%		Die Funktion ist winkeltreu bis auf $\pm$2\\
+%		Wenn man einen Kreis, der nicht ganz im Zentrum steht transformiert ergibt
+%		sich ein Flügelprofil
+%	\end{minipage}
+%	\hspace{2cm}
+%	\begin{minipage}{7cm}
+%		\includegraphics[width=7cm]{./bilder/joukowskiFunktion.png} 
+%
+%	\end{minipage}
+ 
+\subsection{Kreisgleichung}
+Die Lösungen von z bilden einen Kreis mit dem Radius $r$ um den Mittelpunkt $M=(m_x, m_y) \Rightarrow m=m_x + j m_y$. \\
+$$|z-m| = r; \qquad 
+(z-m)(\overline{z} - \overline{m}) = r^2; \qquad 
+z\overline{z} - \overline{m}z - m\overline{z} + m\overline{m} = r^2$$
+$$ \text{Parameterform: } f(t) = m + r \cdot e^{jt}, \quad \text{mit } (0 \leq t \leq 2 \pi) $$
